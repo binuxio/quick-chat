@@ -1,0 +1,1 @@
+export const usersMap = new Map<number, { username: string | undefined, currentSocketIDs: string[] }>()
