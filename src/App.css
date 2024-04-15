@@ -1,0 +1,50 @@
+@media (max-width: 460px) {
+    h1 {
+        font-size: small !important;
+    }
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: skyblue;
+    height: 20px;
+    border-radius: 5px;
+}
+  
+*::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+  
+/* For Firefox */
+* {
+  scrollbar-color: skyblue #f1f1f1;
+  scrollbar-width: 8px;
+}
+
+/* For Edge and IE */
+*::-ms-scrollbar {
+  width: 8px;
+}
+
+*::-ms-thumb {
+  background-color: skyblue;
+  height: 20px;
+  border-radius: 5px;
+}
+
+*::-ms-track {
+  background-color: #f1f1f1;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+pre {
+  white-space: -moz-pre-wrap !important;
+  word-break: break-all;
+}

@@ -1,0 +1,47 @@
+
+export const axiosCancelTokensMap = new Map<string, CancelTokenSource>()
+export async function send(file: FileInterface) {
+    const formdata = new FormData()
+    const fileID = getFileID(file)
+    formdata.append("fileID", fileID)
+    formdata.append("session", "sessionID")
+    // @ts-ignore
+    formdata.append("file", file);
+    const axiosCancelToken = axios.CancelToken.source()
+    axiosCancelTokensMap.set(fileID, axiosCancelToken)
+    const stylesheetID = "stylesheet-" + fileID
+    console.log(axiosCancelTokensMap.get(fileID))
+    let fileNumber = file.size + file.lastModified
+    const fileBoxElements = {
+        fileContainerElementID: "fileContainer-" + fileNumber,
+        progressContainerElementID: "progressContainer-" + fileNumber,
+        progressBarElementID: "progressBar-" + fileNumber,
+        bytesProgressElementID: "bytesProgress-" + fileNumber,
+    }
+
+    createStyleSheet(stylesheetID)
+    const unit = file.size / 1024 >= 1000 ? "mb" : "kb"
+    const bytesTotalString = convertBytes(file.size, true, unit)
+    try {
+        // const verifyDuplicate = await axios.post("/api/upload/verify", { fileID: fileID, transferSessions: "session1" })
+        const res = await axios.post("/api/upload", formdata,
+            {
+                headers: { 'Content-Type': 'multipart/form-data' },
+                onUploadProgress(progressEvent: AxiosProgressEvent) {
+                    console.log(progressEvent)
+                    const styleElement = document.getElementById(styleElementID)
+                    setStylesForFileProgress(styleElement, progressEvent.loaded, progressEvent.total, bytesTotalString, unit, fileBoxElements)
+                },
+                cancelToken: axiosCancelToken.token
+            },
+        )
+    } catch (e) {
+        // @ts-ignore
+        if (e.message == "canceled") {
+
+            return
+        }
+        console.log(e)
+    }
+}
+

@@ -1,0 +1,18 @@
+.spinner_GmWz {
+    animation: spinner_Ctle .8s linear infinite;
+    animation-delay: -.8s;
+}
+
+.spinner_NuDr {
+    animation-delay: -.65s
+}
+
+.spinner_OlQ0 {
+    animation-delay: -.5s 
+}
+
+@keyframes spinner_Ctle {
+    93.75%, 100% {
+         opacity: .2
+    }
+}
