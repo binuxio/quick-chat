@@ -12,7 +12,7 @@ export default function (transferDetails: any, callback: ({ }) => void) {
         const writePath = path.join(transferSessionDir, filename)
         const fileProgressID = userID + "-" + filename
         /* 
-            TODO: check filesize
+            TODO: set filesize limit
             if (filesize > maxFileSize) {
             console.log("File too large")
             callback({ status: 400, transferCompleted: false })

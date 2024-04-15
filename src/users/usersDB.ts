@@ -1,1 +1,3 @@
-export const usersMap = new Map<number, { username: string | undefined, currentSocketIDs: string[] }>()
+import { UserObject } from "./user.types";
+
+export const usersMap = new Map<number, { currentSocketIDs: string[] }>()
