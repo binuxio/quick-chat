@@ -6,7 +6,6 @@ import { usersMap } from "../users/usersDB";
 export default function (submitObject: _Submit) {
     const socket: Socket = this
     if (!socket) throw new Error("Socket is undefined")
-    console.log(submitObject)
     const partnerID = submitObject.toPartner.id
     const user = usersMap.get(partnerID)
 

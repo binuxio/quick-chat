@@ -13,7 +13,7 @@ export default function (submitObject: _Submit, receiversSocketIDs: string[], so
 
     fs.readFile(readPath, (err, data) => {
         if (err) {
-            // TODO: Error handling on client if his messages couldnt be delivered
+            // TODO: Error handling on client if his messages could not be delivered
             console.log(err)
             return
         }
