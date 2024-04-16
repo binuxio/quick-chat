@@ -4,10 +4,6 @@
 
 A lightweight chat application enabling users to establish direct peer-to-peer connections without the need for login credentials. Simply share your unique 4-digit code to get messages instantly.
 
-##### Deployed Demo
-
-http://quickchat.binux.io
-
 ### Getting started
 
 #### Server
@@ -26,3 +22,7 @@ npm run dev
 ```
 
 Access the Client in your web browser at `http://0.0.0.0:3080`
+
+#### Demo
+
+http://quickchat.binux.io
