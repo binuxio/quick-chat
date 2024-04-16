@@ -6,14 +6,14 @@ QuickChat is a web application designed for rapid message and file transfer. It 
 
 #### Server
 ```bash
-git clone -b https://github.com/binuxio/quick-chat/tree/server server
+git clone -b server https://github.com/binuxio/quick-chat server
 cd server
 npm install
 npm run dev
 ```
 #### Client
 ```bash
-git clone -b https://github.com/binuxio/quick-chat/tree/client client
+git clone -b client https://github.com/binuxio/quick-chat client
 cd client
 npm install
 npm run dev
