@@ -73,7 +73,7 @@ const Inputfield = () => {
     return (
         <>
             <SelectedFilesList />
-            <form className="mt-auto w-full bg-white relative" onSubmit={e => { submit(e); e.preventDefault() }} ref={FormRef}>
+            <form className="mt-auto w-full bg-white relative" onSubmit={e => { e.preventDefault(); submit(e); }} ref={FormRef}>
                 <div className='flex w-full'>
                     <div className='flex py-1'>
                         <div className='border-r mt-auto'>
@@ -102,7 +102,9 @@ const Inputfield = () => {
                                 id='textInput'
                                 ref={textInputRef}
                                 onKeyDown={e => {
-                                    if (e.ctrlKey && e.key == "Enter") {
+                                    if (e.shiftKey && e.key === "Enter") return
+                                    if (e.key === "Enter") {
+                                        e.preventDefault()
                                         const syntheticEvent = new Event('submit', { bubbles: true, cancelable: true });
                                         FormRef.current?.dispatchEvent(syntheticEvent);
                                     }

@@ -8,7 +8,11 @@ const TextField: React.FC<{ msgObject: Partial<TextMessage> }> = React.memo(({ m
 
     return <div className='w-full flex'>
         <div className={`${iamtheSender ? "ml-auto" : "mr-auto"} max-w-[70%]`}>
-            <div className={`${iamtheSender ? "ml-auto" : "mr-auto"} rounded-lg px-3 py-1 bg-sky-800 w-max text-[15px] text-white whitespace-pre-wrap break-all`}>
+            <div className={`${iamtheSender ? "ml-auto" : "mr-auto"} rounded-lg px-2 py-1
+             bg-sky-800 w-full text-[15px] text-white
+            whitespace-pre-wrapp
+            break-words 
+            `}>
                 {message}
             </div>
 
