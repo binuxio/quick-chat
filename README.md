@@ -1,5 +1,7 @@
 # QuickChat
 
+![banner](quickchat-banner.jpg)
+
 A lightweight chat application enabling users to establish direct peer-to-peer connections without the need for login credentials. Simply share your unique 4-digit code to get messages instantly.
 
 ### Getting started
